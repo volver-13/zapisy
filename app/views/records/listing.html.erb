@@ -1,0 +1,34 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<h3>Odwołaj wizyty</h3>
+<% if !@visits.empty? %>
+
+<table>
+  <tr>
+  <th>Imie lekarza</th>
+  <th>Nazwisko lekarza</th>
+  <th>Status wizyty</th>
+  <th>Termin</th>
+  <th>Odwolaj</th>
+  </tr>
+  <% for vis in @visits %>
+  <tr>
+  <td><%=  vis.doctor.name %></td>
+  <td><%=  vis.doctor.surname %></td>
+  <td><%=  vis.visit_status %></td>
+  <td><%=  vis.visit_date.strftime(" %d/%m/%Y - %H:%M") %></td>
+  <td><% if vis.visit_status=="zarejestrowana" then %>
+  <%= link_to 'Odwołaj', { :action => :usun, :id => vis.id }, :confirm => 'Na pewno odwołać?' %>
+  <%else%>
+  -----------
+  </td>
+  <%end%>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+W systemie nie ma zapisanych żadnych wizyt.
+<%end%>
+

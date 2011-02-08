@@ -1,0 +1,32 @@
+<h1>Editing term</h1>
+
+<% form_for(@term) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :visit_day %><br />
+    <%= f.select :visit_day, @days %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.select :start_time, @hours %>
+  </p>
+  <p>
+    <%= f.label :end_time %><br />
+    <%= f.select :end_time, @hours %>
+  </p>
+  <p>
+    <%= f.label :room_number %><br />
+    <%= f.text_field :room_number %>
+  </p>
+    <p>
+    <%= f.label :doctor_id %><br />
+   <%= collection_select(:term, :doctor_id, @doctors, :id, :surname, {:prompt => true}) %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @term %> |
+<%= link_to 'Back', terms_path %>

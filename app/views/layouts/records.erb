@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Witaj w systemie E-zapisy</title>
+
+  <%= stylesheet_link_tag "styles", :media => "all" %>
+
+</head>
+<body>
+<div id="container">
+	<div id="header">
+          <br/><br/>
+    	<h1>System internetowych zapisów do lekarza E-zapisy</h1>
+        <div class="clear"></div>
+    </div>
+    <div id="nav">
+    	<ul>
+            <li><%= link_to 'Strona główna', :action => "index" %></li>
+            <li><%= link_to 'Rejestracja wizyty', :action => "specialization_selection" %></li>
+            <li><%= link_to 'Odwołanie wizyty', :action => "listing" %></li>
+            <li><%= link_to 'Historia wizyt', :action => "history" %></li>
+            <li><a href="#">Harmonogram przyjęć</a></li>
+            <li><a href="#">Ustawienia konta</a></li>
+        </ul>
+    </div>
+    <div id="page-intro">
+     <img src="../../images/topbaner.jpg" alt="nie ma" />
+    <!--	<h2>We make free web templates</h2>
+    #    <p>This highly prominent paragraph or two of text can be easily used to introduce viewers to the front page of your website and provide an overview of your pages as they browse your website.</p>
+  -->  </div>
+    <div id="body">
+     
+		<div id="content">
+                  <p style="color: green"><%= flash[:notice] %></p>
+                  <%= yield %>
+        </div>
+
+         <div class="sidebar">
+            <ul>
+               <li>
+                    <h4><span>Pasek nawigacji</span></h4>
+                    <ul class="blocklist">
+                          <li><%= link_to 'Strona główna', :action => "index" %></li>
+                          <li><%= link_to 'Rejestracja wizyty', :action => "specialization_selection" %></li>
+                          <li><%= link_to 'Odwołanie wizyty', :action => "listing" %></li>
+                          <li><%= link_to 'Historia wizyt', :action => "history" %></li>
+                          <li><a href="#">Harmonogram przyjęć</a></li>
+                          <li><a href="#">Ustawienia konta</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    	<div class="clear"></div>
+    </div>
+</div>
+<div id="footer">
+	<p>&copy; Copywrong 2010 Kamil Bryś <br/> Website Design by <a href="http://www.spyka.net">Free CSS Templates</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<h1>Listing doctors</h1>
+
+
+<table border="1">
+  <tr>
+    <th>Imie</th>
+    <th>Nazwisko</th>
+    <th>Specjalizacja</th>
+  </tr>
+
+<% for doctor in @doctors %>
+  <tr>
+    <td><%=h doctor.name %></td>
+    <td><%=h doctor.surname %></td>
+    <td>
+    <% specjalizacje= Specialization.find(doctor.specialization_ids) %>
+      <%  specjalizacje.each  { |s| if s.name!=nil then %>
+         <%= s.name+"<br>" %>
+     <% end } %>
+    </td>
+    <td><%= link_to 'Show', doctor %></td>
+    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
+    <td><%= link_to 'Destroy', doctor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'New doctor', new_doctor_path %>

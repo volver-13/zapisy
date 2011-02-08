@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vist_day: MyString
+  start_time: 2010-12-27 19:33:03
+  end_time: 2010-12-27 19:33:03
+  room_number: 1
+
+two:
+  vist_day: MyString
+  start_time: 2010-12-27 19:33:03
+  end_time: 2010-12-27 19:33:03
+  room_number: 1

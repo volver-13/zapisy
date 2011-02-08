@@ -1,0 +1,28 @@
+<p>
+  <b>Vist day:</b>
+  <%=h @term.visit_day %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @term.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @term.end_time %>
+</p>
+
+<p>
+  <b>Room number:</b>
+  <%=h @term.room_number %>
+</p>
+
+<p>
+  <b>Doctor:</b>
+  <%=h "#{@term.doctor.name} #{@term.doctor.surname}" %>
+</p>
+
+
+<%= link_to 'Edit', edit_term_path(@term) %> |
+<%= link_to 'Back', terms_path %>

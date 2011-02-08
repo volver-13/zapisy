@@ -1,0 +1,26 @@
+<fieldset>
+	<legend>Doctor</legend>
+	<p>
+		<label for="name">Name: </label>
+		<%= @doctor.name %>
+	</p>
+
+	<p>
+		<label for="surname">Surname: </label>
+		<%= @doctor.surname %>
+	</p>
+
+        <p>
+          <label for="specialization">Specializations: </label>
+              <% specjalizacje= Specialization.find(@doctor.specialization_ids) %>
+      <%  specjalizacje.each  { |s| if s.name!=nil then %>
+        <li><%= s.name+"<br>" %></li>
+     <% end } %>
+
+        </p>
+</fieldset>
+
+<fieldset>
+	<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
+	<%= link_to 'Back', doctors_path %>
+</fieldset>

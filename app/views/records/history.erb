@@ -1,0 +1,27 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h3>Historia wizyt</h3>
+<% if !@visits.empty? %>
+
+<table>
+  <tr>
+  <th>Imie lekarza</th>
+  <th>Nazwisko lekarza</th>
+  <th>Status wizyty</th>
+  <th>Termin</th>
+  </tr>
+  <% for vis in @visits %>
+  <tr>
+  <td><%=  vis.doctor.name %></td>
+  <td><%=  vis.doctor.surname %></td>
+  <td><%=  vis.visit_status %></td>
+  <td><%=  vis.visit_date.strftime(" %d/%m/%Y - %H:%M") %></td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+Brak wizyt
+<%end%>

@@ -1,0 +1,419 @@
+body {
+	background: #fff url('../images/bodybg.jpg') repeat-x scroll top left;
+	margin:0;
+	padding:0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #444;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
+
+table .tab {
+    text-align: center;  
+}
+
+table .tab td{
+    padding: 1px 1px;
+}
+
+td .godz {
+    text-align: center;
+}
+
+table .tab_godz {
+    text-align: right;
+}
+
+table .tab_godz td {
+    color: black;
+    font-weight: bold;
+    padding: 1px 1px;
+}
+/** element defaults **/
+table {
+	width: 100%;
+	text-align: left;
+}
+
+th {
+	padding: 5px 5px;
+}
+
+td {
+    padding: 5px 5px;
+
+}
+
+th {
+	color: #fff;
+	background: #C1142C none repeat-x scroll left top;
+}
+
+th .tab{
+	color: #fff;
+	background: #C1142C none repeat-x scroll left top;
+        text-align :center
+}
+
+td {
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+
+code, blockquote {
+	display: block;
+	border-left: 5px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+code {
+	color:#555;
+}
+blockquote {
+	border-left: 5px solid #147BB3;
+}
+
+blockquote p {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 0;
+	color: #555;
+	height: 1%;
+}
+
+p {
+	line-height: 2.1em;
+	margin-bottom: 30px;
+}
+
+a {
+	color: #CA1631;
+}
+
+a:hover {
+	color: #147BB3;
+}
+
+a:focus {
+	outline: none;
+}
+
+fieldset {
+	display: block;
+	border: none;
+	border-top: 1px solid #ccc;
+}
+
+fieldset legend {
+	font-weight: bold;
+	font-size: 13px;
+	padding-right: 10px;
+	color: #555;
+}
+
+fieldset form {
+	padding-top: 15px;
+}
+
+fieldset p label {
+	float: left;
+	width: 150px;
+}
+
+form input, form select, form textarea {
+	padding: 5px;
+	color: #222;
+	border: 1px solid #ccc;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+form input.formbutton {
+	border: none;
+	background: #C1142C;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 5px 10px;
+	font-size: 12px;
+	font-family: Tahoma, Geneva, sans-serif;
+	letter-spacing: 1px;
+	width: auto;
+	overflow: visible;
+}
+
+li.nav-search form input.formbutton {
+	background-color: #C1142C;
+}
+
+li.nav-search form input.s {
+	padding: 5px;
+	color: #333333;
+	border: 1px solid #111;
+	border-right:1px solid #333;
+	border-bottom:1px solid #333;
+	background-color:#444;
+	color:#ccc;
+}
+
+
+form.searchform p {
+	margin: 5px 0;
+}
+
+
+span.required {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #ff0000;
+}
+
+h1 {
+	color: #999;
+	font-weight: normal;
+	font-size: 35px;
+}
+
+h2 {
+	color: #222;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 26px;
+	letter-spacing: 0.5px;
+	font-weight: normal;
+	padding: 0 0 5px;
+	margin: 0;
+}
+
+h3 {
+	color: #147BB3;
+	font-size: 17px;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+h4 {
+	padding-bottom: 10px;
+	font-size: 15px;
+	color: #999;
+}
+
+h5 {
+	padding-bottom: 10px;
+	font-size: 13px;
+	color: #999;
+}
+
+ul, ol {
+	margin: 0 0 35px 35px;
+}
+
+li {
+	padding-bottom: 10px;
+}
+
+li ol, li ul {
+	font-size: 1.0em;
+	margin-bottom: 0;
+	padding-top: 5px;
+}
+
+
+#container {
+	width: 960px;
+	margin:0 auto;
+	padding: 0;
+	background: transparent url('../images/core.jpg') no-repeat;
+}
+
+#header {
+	padding: 0 30px;
+	margin: 0 auto;
+	height: 108px;
+}
+
+
+#header h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-size: 44px;
+	font-weight: normal;
+	text-decoration: none;
+	letter-spacing: -3px;
+	float: left;
+	border-bottom: 1px solid #333;
+}
+
+#header h2 {
+	color: #CA1631;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 12px;
+	margin-top: 40px;
+	padding-left: 4px;
+	text-transform: uppercase;
+	letter-spacing: 0;
+}
+
+#nav {
+	height: 40px;
+	width: 960px;
+}
+
+#nav ul {
+	list-style: none;
+	padding: 0 10px;
+	margin: 0;
+	height: 40px;
+}
+
+#nav ul li {
+	float: left;
+	display: block;
+	padding:0;
+}
+
+#nav ul li a {
+	color: #c0c0c0;
+	display: block;
+	font-size: 10px;
+        font-weight: bold;
+	padding: 13px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#nav ul li a:hover {
+	background: transparent url('../images/nav-hover.jpg') repeat-x scroll top left;
+	color: #fff;
+}
+
+#nav ul li.nav-search {
+	float: right;
+	padding-right: 13px;
+}
+
+#page-intro {
+	height: 180px;
+	padding: 10px 12px 0;
+	color: #eee;
+}
+
+#page-intro h2 {
+	color: #fff;
+	font-size: 33px;
+	font-family: 'Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,Sans-Serif;
+}
+
+#page-intro p {
+	font-size: 12px;
+}
+
+#body {
+	margin:0 auto;
+	padding: 40px 5px;
+	width: 930px;
+}
+
+#content {
+	float: left;
+	width: 620px;
+	margin: 0;
+}
+
+.sidebar {
+	width: 280px;
+	padding: 0;
+	float: right;
+	padding-top: 15px;
+}
+
+
+.sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar ul li {
+	margin-bottom: 20px;
+	line-height: 1.9em;
+}
+
+.sidebar li ul li {
+	display: block;
+	border-top: none;
+	padding: 6px 7px;
+	margin: 0;
+	line-height: 1.5em;
+	font-size: 13px;
+	color: #555;
+}
+
+.sidebar li ul li a {
+	font-weight: normal;
+	color: #555;
+}
+
+.sidebar li ul.blocklist li {
+	padding: 0;
+	display: inline;
+}
+
+.sidebar li ul.blocklist li a {
+	display: block;
+	padding: 9px 8px;
+	text-decoration: none;
+}
+
+.sidebar li ul.blocklist li a:hover {
+	color: #999;
+}
+
+.sidebar li ul li a:hover {
+	color: #147BB3;
+}
+
+.sidebar h4 {
+	color: #B3142C;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	margin: 0;
+	border-bottom: 2px solid #ddd;
+	padding: 5px 5px;
+	font-weight: bold;
+}
+
+.clear {
+	clear: both;
+}
+
+#footer {
+	background-color: #010101;
+	margin: 0 auto;
+	padding: 10px 0 50px;
+        height: 20px;
+}
+
+#footer p {
+	text-align: left;
+	color: #fff;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0 auto;
+	display: block;
+	padding: 0;
+	width: 960px;
+}
+
+#footer p a {
+	color: #fff;
+	font-weight: bold;
+}

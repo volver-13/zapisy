@@ -1,0 +1,8 @@
+<table>
+    <th>Dostępne specjalizacje</th>
+    <%  for spec in @specializations %>
+    <tr><td><%= link_to spec.name, :action => "doctor_selection", :id => spec %></td></tr>
+         <%  end %>
+
+
+</table>

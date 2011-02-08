@@ -1,0 +1,23 @@
+<fieldset>
+	<legend>Doctor</legend>
+	<p>
+		<label for="name">Name</label>
+		<%= text_field :doctor, :name, :value => @doctor.name %>
+	</p>
+
+	<p>
+		<label for="surname">Surname</label>
+		<%= text_field :doctor, :surname, :value => @doctor.surname %>
+	</p>
+
+        <p>
+    <% for specialization in Specialization.find(:all)%>
+      <div>
+         <%= check_box_tag "doctor[specialization_ids][]", specialization.id, @doctor.specializations.include?(specialization) %>
+         <%= specialization.name  %>
+      </div>
+    <% end %>
+    </p>
+
+
+</fieldset>

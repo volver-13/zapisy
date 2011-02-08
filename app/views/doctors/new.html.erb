@@ -1,0 +1,31 @@
+<h1>New doctor</h1>
+
+
+<% form_for(@doctor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :surname %><br />
+    <%= f.text_field :surname  %>
+  </p>
+
+  <p>
+    <% for specialization in Specialization.find(:all)%>
+      <div>
+         <%= check_box_tag "doctor[specialization_ids][]", specialization.id, @doctor.specializations.include?(specialization) %>
+         <%= specialization.name  %>
+      </div>
+    <% end %>
+  </p>
+
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', doctors_path %>

@@ -1,0 +1,8 @@
+<table>
+  <th>Dostępni lekarze</th>
+
+    <%  for doc in @doctors %>
+  <tr><td> <%=  link_to "#{doc.name} #{doc.surname}", :action => "schedule", :id => doc %></td></tr>
+         <%  end %>
+
+</table>

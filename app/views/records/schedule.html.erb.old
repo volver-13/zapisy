@@ -1,0 +1,136 @@
+
+<% dzisiaj=@t %>
+<%   day=dzisiaj.strftime("%a")
+      dzien=dzisiaj.day
+%>
+<%= dzien %><br/>
+<%= dzisiaj%>
+
+<%    tablica=[Time.now,Time.now,Time.now,Time.now,Time.now]
+      case day
+      when "Mon"
+          aktualny=1
+          tablica[0]=dzisiaj
+          tablica[1]=dzisiaj+(60*60*24)
+          tablica[2]=dzisiaj+2*(60*60*24)
+          tablica[3]=dzisiaj+3*(60*60*24)
+          tablica[4]=dzisiaj+4*(60*60*24)
+      when "Tue"
+          aktualny=2
+          tablica[0]=dzisiaj-(60*60*24)
+          tablica[1]=dzisiaj
+          tablica[2]=dzisiaj+(60*60*24)
+          tablica[3]=dzisiaj+2*(60*60*24)
+          tablica[4]=dzisiaj+3*(60*60*24)
+      when "Wed"
+          aktualny=3
+          tablica[0]=dzisiaj-2*(60*60*24)
+          tablica[1]=dzisiaj-(60*60*24)
+          tablica[2]=dzisiaj
+          tablica[3]=dzisiaj+(60*60*24)
+          tablica[4]=dzisiaj+2*(60*60*24)
+      when "Thu"
+          aktualny=4
+          tablica[0]=dzisiaj-3*(60*60*24)
+          tablica[1]=dzisiaj-2*(60*60*24)
+          tablica[2]=dzisiaj-(60*60*24)
+          tablica[3]=dzisiaj
+          tablica[4]=dzisiaj+(60*60*24)
+      when "Fri"
+          aktualny=5
+          tablica[0]=dzisiaj-4*(60*60*24)
+          tablica[1]=dzisiaj-3*(60*60*24)
+          tablica[2]=dzisiaj-2*(60*60*24)
+          tablica[3]=dzisiaj-(60*60*24)
+          tablica[4]=dzisiaj
+      end %>
+
+
+
+
+<% for item in tablica %>
+<%= item.day %>
+<% end %>
+
+
+<table border="1">
+  <tr>
+  <th class="tab">Godziny</th>
+  <th class="tab">Poniedziałek<br/><%= tablica[0].strftime("%d/%m/%y") %> </th>
+  <th class="tab">Wtorek<br/><%= tablica[1].strftime("%d/%m/%y") %> </th>
+  <th class="tab">Środa<br/><%= tablica[2].strftime("%d/%m/%y") %> </th>
+  <th class="tab">Czwartek<br/><%= tablica[3].strftime("%d/%m/%y") %> </th>
+  <th class="tab">Piątek<br/><%= tablica[4].strftime("%d/%m/%y") %> </th>
+  </tr>
+  <tr>
+    <td>
+      <table class="tab_godz">
+      <% for godz in @hours %>
+        <tr><td><%=   "#{godz}.00 - #{godz}.30" -%></td></tr>
+        <tr><td><%=   "#{godz}.30 - #{godz+1}.00" -%></td></tr>
+        <% end %>
+        </table>
+    </td>
+
+
+
+    <% i = 0 %>
+
+    <%  for term in @terms  %>
+
+        <% dzien = term.visit_day
+
+         case dzien
+          when "Poniedzialek"
+              zterminu=1
+          when "Wtorek"
+              zterminu=2
+          when "Sroda"
+              zterminu=3
+          when "Czwartek"
+              zterminu=4
+          when "Piatek"
+              zterminu=5
+          end
+        %>
+
+    
+
+        <td><table class="tab">
+
+            <% for godz in @hours %>
+
+              <% if godz >= term.start_time && godz < term.end_time  %>
+
+                  <% if  aktualny <= zterminu %>
+
+                         <% if dzien != tablica[i].day || godz >= Time.now.hour %>
+
+                                 <tr><td><%=  link_to "Zapisz", {:action => :visit_creation, :doctor_id => @doctor.id, :mies => tablica[i].strftime("%b"), :dzien => tablica[i].day, :godz => godz, :min => 0 },  :confirm => "Zapisac do #{@doctor.name} #{@doctor.surname} na  #{godz}.00 dnia #{tablica[i].strftime("%d/%m/%y")} ?"  %></td></tr>
+                                 <tr><td><%=  link_to "Zapisz", {:action => :visit_creation, :doctor_id => @doctor.id, :mies => tablica[i].strftime("%b"), :dzien => tablica[i].day, :godz => godz, :min => 30 }, :confirm => "Zapisac do #{@doctor.name} #{@doctor.surname} na  #{godz}.30 dnia #{tablica[i].strftime("%d/%m/%y")} ?" %></td></tr>
+                         <% else %>
+                                 <tr><td><%=   "Zapisz" -%></td></tr>
+                                 <tr><td><%=   "Zapisz" -%></td></tr>
+                           <% end %>
+
+                   <% else %>
+
+                         <tr><td><%=   "Zapisz" -%></td></tr>
+                         <tr><td><%=   "Zapisz" -%></td></tr>
+
+                   <% end %>
+
+              <% else %>
+                      <tr><td>Niedostępne</td></tr>
+                      <tr><td>Niedostępne</td></tr>
+            <%  
+                end
+                end
+                i+=1
+            %>
+          </table>
+        </td>
+    <% end %>
+  </tr>
+</table>
+
