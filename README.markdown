@@ -5,3 +5,4 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 
 #new edition 
 edit at 17-10-2016
+feature2 implementation
